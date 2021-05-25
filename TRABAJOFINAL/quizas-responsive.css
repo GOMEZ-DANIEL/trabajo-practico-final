@@ -1,0 +1,452 @@
+:root{
+    --color-root-rojo: #EB1515;
+    --color-root-white: #fafafa;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'EB Garamond';
+    /*color: black;*/
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px;
+    background-color:lightsalmon;  
+    justify-content:space-around;
+    border:3px solid #940404;
+
+  
+}
+.navegador {
+    background-color: darksalmon;
+    color:maroon;
+    text-decoration-line: none;
+    border-radius: 0.3em;
+    padding:0.1em;
+    border: 0.0625em solid white;
+    margin: 0.1em;
+    
+}
+
+a {
+    background-color: var(--color-root-rojo); 
+    font-size: 1em;
+    margin: 0.5em;
+    font-family: serif;
+}
+
+a:link { color:black;}
+.header a:hover { background-color: rgb(115, 220, 228);}
+.header a:visited{ color:blue}
+.header a:active { background-color: green;
+          color:white}
+
+          
+.carousel-inner .img-responsive{
+    width: 100%;
+    height: 50%;
+}
+
+.item .carousel-caption{
+    text-shadow: 2px 2px 5px #07DDF7;
+    color: black;
+    font-size: 2em;
+}
+
+
+.header, .articulo, .izquierda, .derecha, .footer{
+    flex-grow:1;
+    flex-basis: 100%; 
+    padding: 10px;
+}
+.section{
+    width:100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:flex;
+    flex-direction: column;
+}
+
+
+
+.box{
+    width:100%; 
+    height: 50vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5%;   
+    border-radius: 10px;
+}
+
+.box img{
+    width: 100%;
+    height:95%;
+    object-fit: cover;
+}
+.box .hover{
+    width:0%;
+    height:50vh;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    position:absolute;
+    transition: .6s all;
+    }
+.hover p{
+    text-shadow: 2px 2px 5px #07DDF7;
+    color:black;
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: 0.625em 1.25em;
+    text-align: center;
+   
+}
+
+.box:hover .hover{
+    width: 100%;
+}
+
+/* media queries */
+/* tamaño tablet */
+@media all and (min-width: 600px){
+    .aside {
+        flex: 1 1 auto;
+    }
+    .izquierda{margin-right: 0;}
+.derecha{margin-left: 0;}
+.izquierdaindex{margin-right: 0;}
+.derechaindex{margin-left: 0;}
+.izquierdaindex {flex-direction: row;}
+.derechaindex {flex-direction: row;}
+.articulo{flex:2 0;}
+.izquierdaindex{order: 3;}
+.derechaindex{order: 1;}
+.footer{order: 4;}
+.izquierdaindex{margin-right: 0;}
+.derechaindex{margin-left: 0;}
+.izquierda{flex-direction: row;}
+.derecha{flex-direction: row;}
+}
+/* tamaño pc */
+@media all and (min-width: 800px){
+    .articulo{flex:2 0;}
+    .izquierda{order: 1;}
+    .articulo{order: 2;}
+    .derecha{order: 3;}
+    .footer{order: 4;}
+    .izquierda{margin-right: 0;}
+.derecha{margin-left: 0;}
+.articulo{flex:2 0;}
+.izquierdaindex{order: 1;}
+.articulo{order: 2;}
+.derechaindex{order: 3;}
+.footer{order: 4;}
+}
+
+   
+.header, .footer{background: var(--color-root-rojo);
+color: black;
+font-size: 1.5em;
+border: 2px solid black;
+}
+.articulo{background: #ff8800;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+padding:1.5em;
+color: black;
+font-size: 1.5em;
+border:2px solid #fafafa;
+}
+
+.izquierda, .derecha{background-color: rgb(248, 246, 151);
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+padding: 0.5em;
+color: black;
+font-size: 1.5em;
+height:30%;
+display: flex;
+text-align: center;
+flex-direction: row;
+flex-wrap: wrap;
+align-items:baseline;
+border:2px solid #fafafa;
+
+padding: 10px;
+  
+justify-content:center;
+align-content: center;
+}
+
+ .derecha .tarjeta{
+    width: 200px;
+    height: 250px;
+}
+.izquierda .tarjeta{
+    width: 200px;
+    height: 250px;
+}
+
+.wrap {
+    
+    width:100%; 
+    height: 40vh;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+
+    align-items:center;
+    overflow: hidden;
+
+
+  
+   
+}
+
+.tarjetas-wrap {
+   margin: 50px;
+   -webkit-perspective: 800;
+   perspective: 800;
+   
+   
+}
+
+.tarjeta {
+    width: 200px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .7s ease;
+    
+
+}
+.adelante, .atras{
+width: 100%;
+height: 100%;
+position:absolute;
+top:0;
+left:0;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.adelante{
+    width: 100%;
+}
+.atras{
+    transform:rotateY(180deg);
+
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items:stretch;
+    text-align:center;
+    color:#060a0af3;
+    font-family: "open sans";
+    font-size: 0.75em;
+
+}
+
+.tarjetas-wrap:hover .tarjeta{
+    transform:rotateY(180deg);
+
+}
+
+.card1{
+    background-image: url(/imagenes/azul-de-cabra-1-768x551.jpg);
+background-size: cover;}
+
+.card2{
+    background-image: url(/imagenes/Gruyere-800x1067.jpg);
+background-size: cover;}
+
+.card3{
+    background-image: url(/imagenes/gouda-con-pimienta-800x503.jpg);
+    background-size: cover;
+}
+
+.card4{
+    background-image: url(/imagenes/jamon-crudo-recebo.jpg);
+background-size: cover;}
+
+.card5{
+    background-image: url(/imagenes/Lomo-Praga-800x1200.jpg);
+background-size: cover;}
+
+.card6{
+    background-image: url(/imagenes/salame-con-provolone-800x902.jpg);
+    background-size: cover;
+}
+
+
+
+.contenedor .item-de-producto{
+    background-color: rgb(248, 246, 151);
+    width: 31%;
+    height: 500px;
+    text-align: center;
+    margin: 10px;
+    border: 2px solid black;
+    color:rgb(18, 18, 100);
+    font-size: 1.1em;
+}
+
+.item-de-producto{
+    width:100%; 
+    height: 50vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5%;   
+    border-radius: 10px;
+}
+
+.item-de-producto img{
+    width: 200px;
+    height: 150px;
+}
+
+.conteiner{background: hsl(32, 100%, 50%);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+padding:1.5em;
+color: black;
+font-size: 1.5em;
+border:2px solid #fafafa;
+width:190vh;
+}
+
+/*formulario*/
+
+.form-registro{
+    width:500px;
+    background:mediumslateblue;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'EB Garamond';
+    color:rgb(2, 2, 12);
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-registro h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controles{
+    width:100%;
+    background:#07DDF7;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(98, 11, 148);
+    font-family: 'EB Garamond';
+    font-size: 18px;
+}
+
+.form-registro p{
+    text-align: center;   
+}
+.form-registro a:hover{
+    color: black;
+    text-decoration:underline;
+}
+.form-registro .boton:hover{
+    color:#574b3d;
+    text-decoration:cover;
+}
+
+.form-registro .boton{
+    width: 100%;
+    background:yellow;
+    border: none;
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 1.2em;
+}
+.izquierdaindex, .derechaindex{
+    margin-top: 0.5em;
+margin-bottom: 0.5em;
+padding: 0.5em;
+color: black;
+font-size: 1.5em;
+background:rgb(248, 246, 151);
+
+height: 30vh;
+display: flex;
+align-items:flex;
+flex-direction: row;
+border:2px solid #fafafa;
+
+padding: 10px;
+width: 100%;;
+justify-content:space-around;
+align-content:flex-start;
+align-items: center;
+}
+
+
+.izquierdaindex div, .derechaindex div{
+background-color: #940404;
+width: 200px;
+height: 150px;
+margin: 5px;
+text-align: center;
+line-height: 80px;
+font-size: 30px;
+border:2px solid black;
+text-align: center;
+overflow: hidden;
+margin: 1.5%;   
+border-radius: 10px;
+}
+
+.izquierdaindex div img{
+    width: 200px;
+    height: 150px;
+}
+
+.derechaindex div img{
+    width: 200px;
+    height: 150px;}
+
+#imagen{
+    width: 200px;
+    height: 150px;
+    overflow:hidden;
+    cursor: pointer;
+}
+
+#imagen img{
+    width: 500px;
+    height:100%;
+    transition:3s;
+}
+
+#imagen img:hover{ 
+    transform: translateX(-30%);
+    filter: brightness(80%);
+}
